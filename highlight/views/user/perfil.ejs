@@ -1,0 +1,44 @@
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/header_home.ejs') %>
+
+
+
+<main class="main-body">
+    <div class="contenedor-main container">
+        <h2 class="titulo-seccion">Hola <%= user.user_name%></h2>
+
+        <div class="box-view container">
+            <div class="box-container-view">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="/images/imagenesperfil/<%=user.profile_picture%>" width="100%">
+                    </div>
+                    <div class="col-md-9">
+                        <p> Nombre de usuario: <b><%= user.user_name %></b></p>
+                        <p> Correo electronico: <b><%= user.email %></b></p>
+                        <a href="/users/edit">Cambiar contraseña</a>
+
+                        <div class="box-buttom">
+                            
+                            <a href="/sign/sign_list">
+                                <!-- Para corregir luego front y aspecto -->
+                                Ver carteles 
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+
+
+
+	<!-- //Container -->
+
+<%- include('../partials/footer.ejs') %> 

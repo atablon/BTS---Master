@@ -1,0 +1,93 @@
+<%- include('partials/head.ejs') %>
+
+<%- include('partials/header_medium.ejs') %>
+
+
+
+
+
+<div class="container">
+    <div class="row detalle_row">
+        <div class="col-12 col-md-6">
+            <img class="detalle_imagen" src="/images/imagescartel/<%=sign.picture_filename%>" width="100%" alt="">
+        </div>
+        <!-- Datos del Detalle -->
+        <div class="col-12 col-md-6 detalle_producto_info">
+
+            <div class="row">
+                <div class="col-6">
+                    <em class="tipo_cartel"><%= sign.techs.sign_tech%></em>
+                </div>
+                <div class="col-6 box-estrellas">
+                    <p class="estrellas">
+                        <% for(let j=0;j< sign.star;j++){ %>
+                        <span class="fa fa-star checked"></span>
+                            <%}
+                                    for(j=3; j< sign.star;j++){ %>
+                        <span class="fa fa-star n_checked"></span>
+                        <%}%>
+                            </p>
+                        </div>
+                      
+            </div>
+                    
+            <!--Direccion del cartel-->
+            <h2 class="titulo-detalle"> <%= sign.address%> <%= sign.street_number%> </h2>
+                        <p> Entre <%= sign.street_1%> y <%= sign.street_2%> -
+                            <%= sign.city%>, <%= sign.state%></p>
+
+                          
+                                <p class="p_medidas">
+                                    Medidas: <span class="fas fa-arrows-alt-v" class=" arrow_height"></span>
+                                    <%= sign.heigth%>
+                                    mts
+                                    x <span class="fas fa-arrows-alt-h" class=" arrow_width"></span>
+                                    <%= sign.width%> mts
+                                </p>
+                            
+                           
+                                <p class="detalle_datos_adicionales"> <i class="fas fa-sign"></i>
+                                    <%= sign.types.sign_type%> </p>
+                     
+
+                        <!--Calcular costo del cartel-->
+                        <!--Esto hay programarlo, que si elige 2 meses multiple el valor de 1 y muetre la respueta-->
+                        <!--Tambien luego tenemos que ver el form y rutearlo-->
+                        <form class="ui-form-detalle">
+                            <h3>Calculá tu campaña</h3>
+                            <p class="">
+                                <label for="timeCost"> Tiempo de alquiler:</label>
+                                <select name="timeCost" id="timeCost">
+                                    <option value="1 mes" selected>1 mes por $<%=sign.monthly_cost * 1 %></option>
+                                    <option value="2 mes">2 mes por $<%=sign.monthly_cost * 2 %></option>
+                                    <option value="3 mes">3 mes $<%=sign.monthly_cost * 3 %></option>
+                                </select>
+                            </p>
+                            <p>
+                                <label for="date">Desde:</label>
+                                <input id="date" type="date">
+                            </p>
+                           
+                           
+                            <div class="box-buttom">
+                                <button type="submit" class="btn">Alquilar cartel</button>
+                            </div>
+                        </form>
+
+                </div>
+            </div>
+           
+        </div>
+
+        <%- include('partials/footer.ejs') %>
+
+       
+
+
+    
+
+     
+
+
+
+
